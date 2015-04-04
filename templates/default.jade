@@ -1,0 +1,31 @@
+html
+  head
+
+    title!= title
+
+    if headers.utf8
+      meta(charset='UTF-8')
+
+    if headers.mobile
+      meta(name='viewport' content='width=device-width, initial-scale=1')
+      meta(name='apple-mobile-web-app-capable' content='yes')
+      meta(name='mobile-web-app-capable' content='yes')
+
+    each assetPaths, assetType in assetTypesAssetPaths
+      each assetPath in assetPaths
+        if assetType === 'js'
+          script(type="application/javascript" src=assetPath)
+
+    if react
+      script
+        |document.onreadystatechange = function () {
+        |  if (document.readyState === 'complete') {
+        |    var mainElement = document.querySelector('#{mainQuerySelector}')
+        |    React.render(React.createElement(#{react.mainGlobalIdentifier}), mainElement)
+        |  }
+        |}
+
+  body
+    if mainElement
+      div(id=mainElement.id)
+  
