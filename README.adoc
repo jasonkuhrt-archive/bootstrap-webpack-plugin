@@ -1,9 +1,10 @@
 # bootstrap-webpack-plugin
-:toc: macro
+:toc:
 
 The purpose of this project is to intelligently and fully automate index.html generation for applications, tests, component demos, and general development. Users should not have to manually author an index file if they are using this tool. Any case where this tool fails to provide a complete index.html solution should be treated as an issue.
 
-::toc:[]
+
+toc::[]
 
 ## Installation
 
