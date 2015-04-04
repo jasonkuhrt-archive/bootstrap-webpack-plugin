@@ -2,9 +2,11 @@
   "name": "bootstrap-webpack-plugin",
   "version": "0.0.1",
   "description": "Automatically generate index.html for your application.",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel --out-dir build/ lib/",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
     "debug": "^2.1.3",
     "jade": "^1.9.2",
     "ramda": "^0.13.0"
+  },
+  "devDependencies": {
+    "babel": "^5.0.8"
   }
 }
