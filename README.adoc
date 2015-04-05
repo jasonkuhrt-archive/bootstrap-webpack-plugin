@@ -6,18 +6,38 @@ The purpose of this project is to intelligently and fully automate index.html ge
 
 toc::[]
 
+
+
 ## Installation
 
 ----
 npm install --save-dev bootstrap-webpack-plugin
 ----
 
+
+
+## Features
+
+- Extend core template using Jade Blocks: prepend/append/replace head-assets/head-scripts/body/etc 
+- Automatically bootstrap global `Main` function
+- By default for ReactJS apps automatically bootstrap application rendering
+- By default automatically link all assets
+- By default automatically append webpack `stats.hash` to all asset links
+- By default automatically include mobile meta head tags
+
+
+
 ## Guide
+
+TODO
+
 
 
 ## API
 
 TODO
+
+
 
 ## Prior Art
 
