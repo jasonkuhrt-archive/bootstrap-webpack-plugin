@@ -6,17 +6,19 @@ html
     if headers.utf8
       meta(charset='UTF-8')
 
-    if headers.mobile
-      meta(name='viewport' content='width=device-width, initial-scale=1')
-      meta(name='apple-mobile-web-app-capable' content='yes')
-      meta(name='mobile-web-app-capable' content='yes')
+    block head-mobile
+      if headers.mobile
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(name='apple-mobile-web-app-capable' content='yes')
+        meta(name='mobile-web-app-capable' content='yes')
 
-    each assetPaths, assetType in assetTypesAssetPaths
-      each assetPath in assetPaths
-        if assetType === 'js'
-          script(type="application/javascript" src=assetPath)
-        if assetType === 'css'
-          link(rel="stylesheet" href=assetPath)
+    block assets
+      each assetPaths, assetType in assetTypesAssetPaths
+        each assetPath in assetPaths
+            if assetType === 'js'
+            script(type="application/javascript" src=assetPath)
+            if assetType === 'css'
+            link(rel="stylesheet" href=assetPath)
 
     if react
       script
@@ -28,6 +30,7 @@ html
         |}
 
   body
-    if mainElement
-      div(id=mainElement.id)
+    block body
+      if mainElement
+        div(id=mainElement.id)
   
