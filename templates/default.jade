@@ -23,11 +23,16 @@ html
     if react
       script
         |document.onreadystatechange = function () {
-        |  if (document.readyState === 'complete') {
-        |    var mainElement = document.querySelector('#{mainQuerySelector}')
-        |    React.render(React.createElement(#{react.mainGlobalIdentifier}), mainElement)
-        |  }
-        |}
+        |   if (document.readyState === 'complete') {
+        | 
+        if react.autoRender
+          |     var mainElement = document.querySelector('#{mainQuerySelector}');
+          |     React.render(React.createElement(#{react.mainGlobalIdentifier}), mainElement);
+        else
+          |    #{react.mainGlobalIdentifier}();
+        | 
+        |   }
+        |};
 
   body
     block body
