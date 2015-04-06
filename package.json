@@ -18,7 +18,7 @@
   "author": "Jason Kuhrt <jasonkuhrt@me.com> (http://jasonkuhrt.com/)",
   "name": "bootstrap-webpack-plugin",
   "homepage": "https://github.com/jasonkuhrt/bootstrap-webpack-plugin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "build/index.js",
   "description": "Automatically generate index.html for your application.",
   "devDependencies": {
