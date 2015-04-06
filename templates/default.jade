@@ -1,5 +1,5 @@
-html
-  head
+html&attributes(attributes.html)
+  head&attributes(attributes.head)
 
     title!= title
 
@@ -24,17 +24,16 @@ html
       script
         |document.onreadystatechange = function () {
         |   if (document.readyState === 'complete') {
-        | 
         if react.autoRender
           |     var mainElement = document.querySelector('#{mainQuerySelector}');
           |     React.render(React.createElement(#{react.mainGlobalIdentifier}), mainElement);
         else
-          |    #{react.mainGlobalIdentifier}();
+          |     #{react.mainGlobalIdentifier}();
         | 
         |   }
         |};
 
-  body
+  body&attributes(attributes.body)
     block body
       if mainElement
         div(id=mainElement.id)
