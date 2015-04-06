@@ -3,14 +3,14 @@ html&attributes(attributes.html)
 
     title!= title
 
-    if headers.utf8
-      meta(charset='UTF-8')
-
-    block head-mobile
-      if headers.mobile
-        meta(name='viewport' content='width=device-width, initial-scale=1')
-        meta(name='apple-mobile-web-app-capable' content='yes')
-        meta(name='mobile-web-app-capable' content='yes')
+    block meta
+      each content, name in meta
+        case name
+          when 'charset'
+            if content !== false
+              meta(charset=content)
+          default
+            meta(name=name content=content)
 
     block assets
       each assetPaths, assetType in assetTypesAssetPaths
