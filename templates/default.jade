@@ -1,37 +1,38 @@
 html&attributes(attributes.html)
   head&attributes(attributes.head)
+    block head
 
-    title!= title
+      title!= title
 
-    block meta
-      each content, name in meta
-        case name
-          when 'charset'
-            if content !== false
-              meta(charset=content)
-          default
-            meta(name=name content=content)
+      block meta
+        each content, name in meta
+          case name
+            when 'charset'
+              if content !== false
+                meta(charset=content)
+            default
+                meta(name=name content=content)
 
-    block assets
-      each assetPaths, assetType in assetTypesAssetPaths
-        each assetPath in assetPaths
+      block assets
+        each assetPaths, assetType in assetTypesAssetPaths
+          each assetPath in assetPaths
             if assetType === 'js'
-            script(type="application/javascript" src=assetPath)
+              script(type="application/javascript" src=assetPath)
             if assetType === 'css'
-            link(rel="stylesheet" href=assetPath)
+              link(rel="stylesheet" href=assetPath)
 
-    if react
-      script
-        |document.onreadystatechange = function () {
-        |   if (document.readyState === 'complete') {
-        if react.autoRender
-          |     var mainElement = document.querySelector('#{mainQuerySelector}');
-          |     React.render(React.createElement(#{react.mainGlobalIdentifier}), mainElement);
-        else
-          |     #{react.mainGlobalIdentifier}();
-        | 
-        |   }
-        |};
+      if react
+        script
+          |document.onreadystatechange = function () {
+          |   if (document.readyState === 'complete') {
+          if react.autoRender
+            |     var mainElement = document.querySelector('#{mainQuerySelector}');
+            |     React.render(React.createElement(#{react.mainGlobalIdentifier}), mainElement);
+          else
+            |     #{react.mainGlobalIdentifier}();
+          | 
+          |   }
+          |};
 
   body&attributes(attributes.body)
     block body
