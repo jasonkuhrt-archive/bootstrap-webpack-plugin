@@ -27,7 +27,7 @@ html&attributes(attributes.html)
           |   if (document.readyState === 'complete') {
           if react.autoRender
             |     var mainElement = document.querySelector('#{mainQuerySelector}');
-            |     React.render(React.createElement(#{react.mainGlobalIdentifier}), mainElement);
+            |     ReactDOM.render(React.createElement(#{react.mainGlobalIdentifier}), mainElement);
           else
             |     #{react.mainGlobalIdentifier}();
           | 

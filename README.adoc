@@ -20,7 +20,7 @@ npm install --save-dev bootstrap-webpack-plugin
 
 Highlights:
 
-* Extend core template using Jade Blocks: prepend/append/replace head-assets/head-scripts/body/etc 
+* Extend core template using Jade Blocks: prepend/append/replace head-assets/head-scripts/body/etc
 * Automatically bootstrap global `Main` function
 * By default for ReactJS apps automatically bootstrap application rendering
 * By default automatically link all assets
@@ -30,6 +30,8 @@ Highlights:
 
 
 ## Guide
+
+If using the Automatically Bootstrapping React Application a global reference of `ReactDOM` must exist pointing to the `react-dom` module and a global reference of `React` must exist pointing to the `react` module.
 
 TODO
 
