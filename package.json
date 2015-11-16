@@ -1,8 +1,8 @@
 {
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel --out-dir build/ lib/",
+    "postversion": "git push && git push --tags && npm publish",
     "prepublish": "npm run build"
   },
   "dependencies": {
