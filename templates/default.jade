@@ -2,7 +2,7 @@ html&attributes(attributes.html)
   head&attributes(attributes.head)
     block head
 
-      title!= title
+      title!= name
 
       block meta
         each content, name in meta
@@ -14,7 +14,7 @@ html&attributes(attributes.html)
                 meta(name=name content=content)
 
       block assets
-        each assetPaths, assetType in assetTypesAssetPaths
+        each assetPaths, assetType in assetPathsByType
           each assetPath in assetPaths
             if assetType === 'js'
               script(type="application/javascript" src=assetPath)
