@@ -16,8 +16,6 @@ html&attributes(attributes.html)
       block assets
         each assetPaths, assetType in assetPathsByType
           each assetPath in assetPaths
-            if assetType === 'js'
-              script(type="application/javascript" src=assetPath)
             if assetType === 'css'
               link(rel="stylesheet" href=assetPath)
 
@@ -25,7 +23,13 @@ html&attributes(attributes.html)
     block body
       if mainElement
         div(id=mainElement.id)
-  
+
+    block js
+      each assetPaths, assetType in assetPathsByType
+        each assetPath in assetPaths
+          if assetType === 'js'
+            script(type="application/javascript" src=assetPath)
+ 
     if react
       script
         if react.autoRender
